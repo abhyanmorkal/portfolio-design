@@ -1,0 +1,134 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import Nav from "../components/Navbar.astro";
+import Circle from "../components/Circle.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+
+import "./index.css";
+
+const data = [
+  {
+    number: "01",
+    title: "College Search",
+    dis: `Admission Counseling Platform is designed to assist you in navigating the complexities of choosing and advancing in your career path. With the support of our team of expertly certified counselors, you can confidently explore various opportunities and make informed decisions about your future.`,
+    logoUrl: "/wordpress.svg",
+    websiteUrl: "https://counselling.admissionanytime.com/",
+  },
+  {
+    number: "02",
+    title: "MessBee",
+    dis: `MessBee Online web base Bulk WhatsApp Messaging software solution that help client manage their WhatsApp message and automate messaging . I design whole software in figma  with the help of other competitor in their market Work with Frontend and ux things.`,
+    logoUrl: "/reactlogo.svg",
+    websiteUrl: "https://messbee.com/login",
+  },
+  {
+    number: "03",
+    title: "Bioessence Ecom",
+    dis: `Bio-essence is a skincare brand products for Asian women. Build and run in Australia. Worked with both the frontend and the backend.`,
+    logoUrl: "/wordpress.svg",
+    websiteUrl: "https://bioessence.com.au/",
+  },
+  {
+    number: "04",
+    title: "Jai Guruji Chai Ecom",
+    dis: `The Jai Guruji  Tea and Coffee Vending Machine is a convenient and reliable solution for your beverage needs. Build and run in Australia. Worked with both the frontend and the backend.`,
+    logoUrl: "/wordpress.svg",
+    websiteUrl: "https://jaigurujichai.com.au/",
+  },
+  {
+    number: "05",
+    title: "RC Nainwal Book Ecom",
+    dis: `Meet Ramesh C. Nainwal, a distinguished author in the  realm of financial literature. With more than 4 years’ experience in the  finance industry, Worked with both the frontend and the backend. `,
+    logoUrl: "/wordpress.svg",
+    websiteUrl: "https://rcnainwal.com/",
+  },
+];
+---
+
+<Layout title="Abhyan Portfolio">
+  <main>
+    <Nav />
+    <section class="main-content">
+      <section class="hero-section">
+        <div class="heading">Abhyan Morkal</div>
+        <div class="image-section">
+          <img src="/hero.png" alt="profile img " width="150px" />
+          <div class="sub-heading">
+            <div class="sub">
+              <p>Building the web, one pixel at a time.</p>
+            </div>
+            <div class="button">
+              <Button title="useHey 🗿" />
+              <a href="/resume.pdf" style="color:grey">resume</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <section class="about-me">
+      <div class="about-heading">
+        <p class="about-content">
+          <span>&lt;</span> About <span
+            ><img src="/about-me.png" alt="aboutme-image" width="60px" />
+          </span> Me <span> /&gt; </span>
+        </p>
+      </div>
+      <div class="about-para">
+        <p class="about-dis">
+          Hi, I'm Abhyan, also known as mr.morkal. As a Frontend engineer, I am
+          passionate about creating user-friendly web applications using
+          JavaScript. I currently work at Admission Anytime ptv Ltd, where I'm
+          constantly learning and implementing new ideas to improve user
+          experiences.
+        </p>
+        <p class="about-dis">
+          So, if you need a web wizard who can turn your digital dreams into
+          reality, I'm your guy! And hey, who knew coding could be this much
+          fun?"
+        </p>
+      </div>
+    </section>
+    <section class="skill">
+      <div class="skill-heading">
+        <span>&lt;</span> Skill <span> </span> Me <span> /&gt; </span>
+      </div>
+      <div class="circle-path">
+        <Circle />
+      </div>
+      <div class="skill-text">
+        <p style="text-align:center;">
+          and more… I prefer to learn skills as I need them, so I can focus on
+          finding solutions to problems instead of trying to implement new
+          technologies for the sake of implementing them.
+        </p>
+      </div>
+    </section>
+    <section class="projects">
+      <div class="project-heading">
+        <p>Things I worked on</p>
+        <p class="back-project-heading">Things I worked on</p>
+        <p class="back-project-heading-2">Things I worked on</p>
+        <p class="back-project-heading-3">Things I worked on</p>
+      </div>
+      <div class="projects-content">
+        <div class="project-image">
+          <img src="/projects.png" alt="project-img" width="300px" />
+        </div>
+        <div class="project-slider">
+          {
+            data.map((item) => (
+              <ProjectCard
+                number={item.number}
+                title={item.title}
+                dis={item.dis}
+                logoUrl={item.logoUrl}
+                websiteUrl={item.websiteUrl}
+              />
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

@@ -1,0 +1,115 @@
+---
+import Button from "./Button.astro";
+---
+
+<nav>
+  <div id="logo">
+    <span>&lt;</span>ABM<span>&gt;</span><img src="/favicon.svg" alt="" />
+  </div>
+  <Button title="{ useHey } 🗿 " />
+</nav>
+<div id="sub-nav">
+  <div class="marquee">
+    <div class="marquee-content">
+      <span class="marquee-item">Currently Learning NEXT.JS & Native app</span>
+      <span class="marquee-item">Frontend Devloper</span>
+      <span class="marquee-item">Working on AAT Ptv Ltd</span>
+      <span class="marquee-item">Work at Home</span>
+      <!-- for loog duplicates items  -->
+      <span class="marquee-item">Currently Learning NEXT.JS & Native app</span>
+      <span class="marquee-item">Frontend Devloper</span>
+      <span class="marquee-item">Working on AAT Ptv Ltd</span>
+      <span class="marquee-item">Work at Home</span>
+    </div>
+  </div>
+
+  <style>
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 4rem;
+      background-color: #dddddd28; /* Add a background color for visibility */
+    }
+
+    #logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    #logo span {
+      color: #eb5e28;
+      align-items: center;
+    }
+
+    .marquee {
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      background-color: #eb5e28;
+      padding: 0.5rem 0;
+    }
+
+    .marquee-content {
+      display: inline-block;
+      white-space: nowrap;
+      animation: marquee 20s linear infinite;
+    }
+
+    .marquee-item {
+      display: inline-block;
+      padding: 0 2rem;
+      font-size: 1.1rem;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+    /*
+    
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 2rem;
+      }
+
+      #logo {
+        margin-bottom: 1rem;
+      }
+
+      .marquee-content {
+        animation-duration: 15s; 
+      }
+
+      .marquee-item {
+        font-size: 1rem;
+        padding: 0 1rem;
+      }
+    }
+      */
+
+    @media (max-width: 480px) {
+      nav {
+        padding: 1rem;
+        justify-content: space-around;
+      }
+
+      #logo {
+        font-size: 1.2rem;
+      }
+
+      .marquee-item {
+        font-size: 0.9rem;
+        padding: 0 0.5rem;
+      }
+    }
+  </style>
+</div>

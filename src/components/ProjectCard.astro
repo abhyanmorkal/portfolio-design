@@ -1,0 +1,45 @@
+---
+const { number, title, dis, logoUrl, websiteUrl } = Astro.props;
+---
+
+<div class="project-card">
+  <p style="font-weight: 500; font-size: 35px; line-height: 100%;">{number}</p>
+  <p class="title" style="font-size: 25px;">{title}</p>
+  <p class="dis" style="font-size: 12px;">
+    {dis}
+  </p>
+  <div class="logo-link">
+    <div class="logo">
+      <img src={logoUrl} alt="Project logo" />
+    </div>
+    <a href={websiteUrl}>Website</a>
+  </div>
+</div>
+
+<style>
+  .project-card {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 1rem;
+    gap: 5px;
+    min-width: 550px;
+    padding: 1rem 2rem;
+    border: 1px solid #bcbcbc;
+    background-color: #0d0d0d;
+    border-radius: 12px;
+  }
+
+  .logo-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  @media (max-width: 768px) {
+    .project-card {
+      min-width: 300px;
+      padding: 1rem 1rem;
+      gap: 3px;
+    }
+  }
+</style>
