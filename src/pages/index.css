@@ -10,6 +10,10 @@ main {
   max-width: 1000px;
   padding: 1rem;
   overflow-x: auto;
+ 
+  display: flex;
+  -webkit-overflow-scrolling: touch; /* Enable momentum scrolling on iOS */
+  
 }
 .projects-content {
   display: flex;
@@ -19,6 +23,7 @@ main {
 .project-slider::-webkit-scrollbar {
   width: 0;
   height: 0;
+  display: none;
 }
 .project-heading {
   position: relative;

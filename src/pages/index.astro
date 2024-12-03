@@ -115,7 +115,7 @@ const data = [
         <div class="project-image">
           <img src="/projects.png" alt="project-img" width="300px" />
         </div>
-        <div class="project-slider">
+        <div class="project-slider" id="projectSlider">
           {
             data.map((item) => (
               <ProjectCard
@@ -131,4 +131,16 @@ const data = [
       </div>
     </section>
   </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const projectSlider = document.getElementById("projectSlider");
+
+      // Add wheel event listener to the project slider
+      projectSlider.addEventListener("wheel", (event) => {
+        event.preventDefault();
+        projectSlider.scrollLeft += event.deltaY;
+      });
+    });
+  </script>
 </Layout>
